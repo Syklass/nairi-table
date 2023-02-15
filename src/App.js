@@ -49,13 +49,7 @@ function App() {
             </div>
         </div>
         <div className="flex flex-col w-full items-center mt-4">
-            <p>Canvas</p>
-            <input className="text-black p-2 text-center" placeholder='canvas int' type="number"></input>
-            <div className="flex justify-between my-2">
-                <Button text="Квадрат с ребром" onClick/>
-                <Button text="Окружность с диаметром" className="mx-4" onClick/>
-                <Button text="Равносторонний треугольник" onClick/>
-            </div>
+            
             <Canvas/>
         </div>
     </div>;
