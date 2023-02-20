@@ -5,40 +5,39 @@ import Button from "./Button";
 
 
 function Canvas() {
-    const [value, setValue] = useState(true)
-    const [figure, setFigure] = useState(0)
-    const [figureFunc, setFigureFunc] = useState()
+    const [value, setValue] = useState(true);
+    const [figure, setFigure] = useState(0);
 
     const handleValue = (e) => {
-        setValue(e)
+        setValue(e);
     }
 
-    const canvasRef = useRef(null)
-    const canvasContext = useRef(null)
+    const canvasRef = useRef(null);
+    const canvasContext = useRef(null);
 
     useEffect(() => {
-        const cnv = canvasRef.current
-        cnv.width = 300
-        cnv.height = 300
+        const cnv = canvasRef.current;
+        cnv.width = 300;
+        cnv.height = 300;
 
-        const ctx = cnv.getContext('2d')
-        ctx.lineCap = 'round'
-        ctx.strokeStyle = 'white'
-        ctx.fillStyle = 'white'
-        ctx.lineWidth = 5
+        const ctx = cnv.getContext('2d');
+        ctx.lineCap = 'round';
+        ctx.strokeStyle = 'white';
+        ctx.fillStyle = 'white';
+        ctx.lineWidth = 5;
         
-        canvasContext.current = ctx
+        canvasContext.current = ctx;
     })
 
     const drawSq = () => {
-        canvasContext.current.strokeRect(10, 10, value, value)
-        canvasContext.current.stroke();
+        canvasContext.current.strokeRect(10, 10, value, value);
+        canvasContext.current.stroke();;
     
-    }
+    };
     const drawSr = () => {
         canvasContext.current.arc(150,150,value,0,Math.PI*2,true);
-        canvasContext.current.stroke()
-    }
+        canvasContext.current.stroke();
+    };
     const drawTre = () => {
         canvasContext.current.beginPath();
         canvasContext.current.moveTo(value,value);
@@ -46,7 +45,7 @@ function Canvas() {
         canvasContext.current.lineTo(value/2,0);
         canvasContext.current.lineTo(value,value);
         canvasContext.current.fill();
-    }
+    };
 
 
     return (  
@@ -58,23 +57,20 @@ function Canvas() {
                 <Button onClick={()=>{
                     drawSq()
                     setFigure(0)
-                    setFigureFunc(drawSq())
                 }} text="Квадрат с ребром"/>
                 <Button onClick={()=>{
                     drawSr()
                     setFigure(1)
-                    setFigureFunc(drawSr())
                 }} text="Окружность с диаметром" className="mx-4"/>
                 <Button onClick={()=>{
                     drawTre()
                     setFigure(2)
-                    setFigureFunc(drawTre())
                 }} text="Равносторонний треугольник"/>
             </div>
             <p className="text-center mb-2">Выбрано <br/> 
-                {figure==0? "Квадрат с ребром" : ""}
-                {figure==1? "Окружность с диаметром" : ""}
-                {figure==2? "Равносторонний треугольник" : ""}
+                {figure===0? "Квадрат с ребром" : ""}
+                {figure===1? "Окружность с диаметром" : ""}
+                {figure===2? "Равносторонний треугольник" : ""}
             </p>
             <canvas className="border-2 rounded-xl border-white" ref={canvasRef}
             />

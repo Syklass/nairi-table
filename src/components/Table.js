@@ -7,33 +7,38 @@ function Table() {
 
 const data = [
         {
+        id:0,
         one:"Секция 1",
         two:"Секция 2",
         three:"Секция 3",
         },
         {
+        id:1,
         one:"Секция IISIS 1",
         two:"Секция 2",
         three:"Секция 3",
         },
         {
+        id:2,
         one:"Секция 1",
         two:"Секция CDCDCDCD 2",
         three:"Секция 3",
         },
         {
+        id:3,
         one:"Секция 1",
         two:"Секция 2",
         three:"Секция 3",
         },
         {
+        id:4,
         one:"Секция 1",
         two:"Секция SSSDSDS 2",
         three:"Секция 3",
         },
     ]
 
-const [items, setItems] = useState(data)
+const [items, setItems] = useState(data);
 
     return (  
         <div className="flex flex-col border border-red-500 p-4">

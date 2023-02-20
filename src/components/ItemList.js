@@ -3,13 +3,16 @@ import TableItem from "../components/TableItem"
 
 
 function ItemList({items}) {
-    const renderItems = items.map((el)  =>{
+    const renderItems = items.map((el,key)  =>{
         return (
-            <TableItem 
-            one={el.one}
-            two={el.two}
-            three={el.three}
-            />
+            <div key={key}>
+                <TableItem 
+                one={el.one}
+                two={el.two}
+                three={el.three}
+                />
+            </div>
+
         )
     })
 

@@ -1,3 +1,5 @@
+import React from "react";
+
 function TableItem({one,two,three}) {
     return (  
         <div className="border my-1 border-blue-500">
@@ -8,6 +10,6 @@ function TableItem({one,two,three}) {
             </div>
         </div>
     );
-}
+};
 
 export default TableItem;
